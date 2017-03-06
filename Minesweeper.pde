@@ -64,7 +64,7 @@ public void displayLosingMessage()
     textAlign(CENTER);
     for(int i = 0; i<buttons.length; i++)
     {
-        if(bombs.get(i).getMarked()==false)
+        if(bombs.get(i).isMarked()==false)
             bombs.get(i).clicked = true;
     }
     buttons[10][7].setLabel("Y");
@@ -182,11 +182,7 @@ public class MSButton
 
     public void draw () 
     {    
-        if(win)
-            fill(255,0,0);
-        else if(lose)
-            fill(255,0,0);
-        else if(marked)
+        if(marked)
             fill(0);
         else if(clicked && bombs.contains(this)) 
             fill(255,0,0);
